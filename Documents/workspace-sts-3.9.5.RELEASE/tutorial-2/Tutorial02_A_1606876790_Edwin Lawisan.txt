@@ -1,0 +1,96 @@
+Tutorial 02 APAP
+Edwin Lawisan
+1606876790
+APAP-A
+github.com/edwinlawisan
+
+Latihan Project Viral
+1. Ganti baris @RequestMapping(“/viral”) menjadi @RequestMapping(“/viral2jari”). Kemudian run kembali. 
+a. Apakah terjadi compile error?
+Tidak terjadi compile error
+
+b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+Muncul Whitelabel Error Page. @RequestMapping digunakan untuk memetakan permintaan web
+ke Spring Controller Method. Whitelabel terjadi karena link url @RequestMapping tidak sama dengan link localhost.
+Link yang harusnya dipakai adalah localhost:8080/viral2jari
+
+c. Apakah Kegunaan @RequestMapping(“/viral”)
+Untuk memetakan HTTP request ke path "/viral"
+ 
+Kembalikan menjadi @RequestMapping(“/viral”)
+ 
+2. Ganti nama method index() menjadi nama method viral() 
+a. Apakah terjadi compile error? 
+Tidak terjadi compile error
+
+b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+Tidak ada perubahan. Perubahan nama Method dari index tidak mempengaruhi apapun karena return kedua method kodenya sama
+dan @RequestMapping tujuannya juga sama.
+
+Kembalikan menjadi index()
+
+3. Ganti string return type menjadi menjadi return “viral2jari” 
+a. Apakah terjadi compile error?
+Tidak terjadi compile error
+
+b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+Muncul Whitelabel error page. Template "viral2jari" tidak ada dalam project.
+ 
+c. Apakah kegunaan return type pada method controller tersebut?
+Return pada method tersebut digunakan untuk mengembalikan atau merujuk ke sebuah file yang ingin dituju.
+Dalam hal ini merujuk ke file viral2jari.
+
+Kembalikan return type menjadi "viral"
+
+
+Latihan Request Parameter
+
+Setiap ada perubahan pada kode, selalu usahakan run ulang 
+1.Mengapa tulisan “In My feeling” pada thymeleaf challenge tidak pernah muncul di browser?
+Karena atribut th:text akan menggantikan semua teks yang ada di tag <p>. Begitu juga "in My Feelings" akan digantikan oleh "____ do you love me"
+(source: https://www.thymeleaf.org/faq.html#is-webframework)
+
+2.Ubah nilai anotasi RequestMapping “/challenge” menjadi “/viral/challenge”.
+Deskripsikan hasil pada browser dan kembalikan ke bentuk sebelumnya!
+Muncul Whitelabel error page. Hal ini terjadi karena perbedaan isi dari @RequestMapping dengan alamat localhost yang diakses.
+Harusnya alamat localhost adalah localhost:8080/viral/challenge?name=kiki
+
+3.Akses localhost:8080/challenge.
+a.Deskripsikan hasilnya
+Muncul Whitelabel Error page, karena tidak dimasukkan value dari parameter yang dituliskan di PageController.java.
+ 
+b.Ubah methodnya menjadi seperti dibawah ini, deskripsikan lalu kembalikan ke bentuk awal! 
+Setelah methodnya diubah seperti yang diminta pada dokumen tutorial, ketika alamat localhost:8080/challenge dipanggil, maka suatu halaman (bukan halaman
+error) akan terpanggil ke layar seperti pada gambar di bawah ini. Value dari parameter yang diminta (dengan tipe String) digantikan secara otomatis menjadi null.
+
+c.Ubah methodnya menjadi seperti dibawah ini, deskripsikan lalu kembalikan ke bentuk awal! 
+Setelah methodnya diubah seperti yang diminta pada dokumen tutorial, ketika alamat localhost:8080/challenge dan saya menambahkan code lagi pada @RequestMapping yaitu
+“defaultValue = “kiki” Value dari parameter yang diminta akan secara default menjadi “kiki”
+
+
+Latihan Path Variable
+
+1. Akses localhost:8080/challege/
+Apakah hasil dari halaman tersebut?
+Muncul Whitelabel Page Error karena parameter nama disini tidak terpenuhi. Harusnya di alamat localhost dimasukkan nama sedemikian "localhost:8080/nama" sedemikia rupa sehingga bisa diakses
+
+2. Ubah method challengePath menjadi seperti berikut
+Akses localhost:8080/challenge/
+Apakah hasil dari halaman tersebut?
+Muncul Whitelabel Page Error karena terdapat 2 Mapping "Challenge".
+
+3. Akses localhost:8080/challenge/kiki
+Apakah hasil dari halaman tersebut?
+Sesuai dengan yang diharapkan. "kiki do you love me? /n Are you riding". Tidak terjadi error.
+
+
+
+
+
+
+
+
+
+
+
+
