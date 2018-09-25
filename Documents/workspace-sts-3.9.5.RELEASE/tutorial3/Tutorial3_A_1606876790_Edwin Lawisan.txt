@@ -1,0 +1,38 @@
+Edwin Lawisan
+1606876790
+APAP - A
+Tutorial 03
+github.com/edwinlawisan
+
+localhost:8080/car/add?id=1&brand=Honda&type=Civic&price=500000000&amount=50
+Pertanyaan 1?: apakah hasilnya? Jika error, tuliskan penjelasan Anda.
+Tidak terjadi error.
+
+
+localhost:8080/car/add?id=1&brand=Honda&type=Civic&price=200000000
+Pertanyaan 2: ?apakah hasilnya? Jika error, tuliskan penjelasan Anda.
+Muncul Whitelabel page Error, karena tidak ada amount.
+
+
+Jalankan program dan buka
+localhost:8080/car/add?id=2&brand=Honda&type=Mobilio&price=200000000&amount=50
+localhost:8080/car/view?id=2
+Pertanyaan 3?: apakah data Car tersebut muncul? Jika tidak, mengapa?
+Muncul
+
+Coba matikan program dan jalankan kembali serta buka
+localhost:8080/car/view?id=2
+Pertanyaan 4?: apakah data Car tersebut muncul? Jika tidak, mengapa?
+Tidak, karena data Car belum ada di database
+
+Jalankan program dan buka
+localhost:8080/car/add?id=3&brand=Honda&type=Jazz&price=200000000&amount
+=50
+localhost:8080/car/viewall
+Pertanyaan 5?: apakah data Car tersebut muncul?
+Muncul
+
+Coba tambahkan data Car lainnya dengan id yang berbeda, lalu buka
+localhost:8080/car/viewall,
+Pertanyaan 6?: Apakah semua data Car muncul?
+Muncul
